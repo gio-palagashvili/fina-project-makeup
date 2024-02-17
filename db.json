@@ -11,7 +11,7 @@
       "id": 1,
       "title": "Announcement 1",
       "customerName": "Customer A",
-      "isActive": true,
+      "isActive": false,
       "deadlineDate": "Sat Feb 03 2024 00:21:32 GMT+0400"
     },
     {

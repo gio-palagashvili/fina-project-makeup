@@ -4,33 +4,37 @@
       *ngFor="let announcement of announcements"
       class="col-md-4 mb-3 list-item-outer"
     >
-      <div
-        class="card list-item"
-        [routerLink]="['/announcement', announcement.id]"
-      >
-        <div class="card-body">
-          <div class="form-check">
-            <input
-              class="form-check-input"
-              type="checkbox"
-              [checked]="announcement.isActive"
-            />
-            <label
-              class="form-check-label"
-              [class.text-muted]="!announcement.isActive"
-            >
-              {{ "Title" | translate }} - {{ announcement.title }}
-            </label>
+      <a [href]="'http://localhost:4200/ann-item/' + announcement.id">
+        <div
+          class="card list-item"
+          [routerLink]="['/announcement', announcement.id]"
+        >
+          <div class="card-body">
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                [checked]="announcement.isActive"
+              />
+              <label
+                class="form-check-label"
+                [class.text-muted]="!announcement.isActive"
+              >
+                {{ "Title" | translate }} - {{ announcement.title }}
+              </label>
+            </div>
+            <p class="card-text mt-2">
+              {{ "Customer" | translate }} - {{ announcement.customerName }}
+            </p>
+            <p class="card-text mt-2">
+              {{ "Deadline" | translate }} -
+              {{
+                announcement.deadlineDate | date : "EEEE, MMMM d, yyyy HH:mm"
+              }}
+            </p>
           </div>
-          <p class="card-text mt-2">
-            {{ "Customer" | translate }} - {{ announcement.customerName }}
-          </p>
-          <p class="card-text mt-2">
-            {{ "Deadline" | translate }} -
-            {{ announcement.deadlineDate | date : "EEEE, MMMM d, yyyy HH:mm" }}
-          </p>
         </div>
-      </div>
+      </a>
     </div>
   </div>
 </div>
