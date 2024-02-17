@@ -1,0 +1,38 @@
+<button class="btn btn-info mb-3" [routerLink]="['/announcement-list']">
+  Back
+</button>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <div class="card">
+        <div class="card-body">
+          <p class="card-text mt-2">
+            {{ "created" | translate }} -
+            {{ announcement.createdDate | date : "EEEE, MMMM d, yyyy" }}
+          </p>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              [checked]="announcement.isActive"
+            />
+            <label
+              class="form-check-label"
+              [class.text-muted]="!announcement.isActive"
+            >
+              {{ "Title" | translate }} - {{ announcement.title }}
+            </label>
+          </div>
+          <p class="card-text mt-2">
+            {{ "Customer" | translate }} - {{ announcement.customerName }}
+          </p>
+          <p class="card-text mt-2">
+            {{ "Deadline" | translate }} -
+            {{ announcement.deadlineDate | date : "EEEE, MMMM d, yyyy HH:mm" }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
